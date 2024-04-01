@@ -1,3 +1,3 @@
-#CTRATING2
+# CTRATING2
 
 A custome rating view
