@@ -19,11 +19,14 @@ public enum RatingImage: String {
     case baseball
     case basketball
     case football
+    case custom
 
     // computed properties to generate the correct filled or open images
     var fillImage: Image {
         rawValue.prefix(3) == "SF_" ?
             Image(systemName: String(rawValue.dropFirst(3)) + ".fill")
+            :
+            rawValue == "custom" ? Image("\(rawValue).fill") ?
             :
             Image("\(rawValue).fill", bundle: .module)
     }
@@ -31,6 +34,9 @@ public enum RatingImage: String {
     var openImage: Image {
         rawValue.prefix(3) == "SF_" ?
             Image(systemName: String(rawValue.dropFirst(3)))
+            :
+            rawValue == "custom" ?
+            Image(rawValue)
             :
             Image(rawValue, bundle: .module)
     }
