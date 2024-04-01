@@ -26,7 +26,7 @@ public enum RatingImage: String {
         rawValue.prefix(3) == "SF_" ?
             Image(systemName: String(rawValue.dropFirst(3)) + ".fill")
             :
-            rawValue == "custom" ? Image("\(rawValue).fill") ?
+            rawValue == "custom" ? Image("\(rawValue).fill") 
             :
             Image("\(rawValue).fill", bundle: .module)
     }
